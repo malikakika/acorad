@@ -1,0 +1,9 @@
+{
+  "name": "acorad",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/acorad",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project acorad --web",
+  "targets": {}
+}

@@ -20,22 +20,11 @@ const Header = () => {
         </div>
 
         <div className="hidden lg:flex space-x-6 relative ml-auto">
-          <Link to="accueil" className="text-xl font-semibold hover:text-accent-green transition cursor-pointer">Accueil</Link>
-          <Link to="about" className="text-xl font-semibold hover:text-accent-green transition cursor-pointer">À propos</Link>
-
-          <div className="relative group">
-            <button className="text-xl font-semibold hover:text-accent-green transition cursor-pointer">
-              Services
-            </button>
-            <div className="absolute hidden bg-primary-blue text-light-gray rounded-lg shadow-lg top-full left-0 space-y-2 p-2 group-hover:block">
-              <Link to="webinaire" className="block py-2 text-xl cursor-pointer">Webinaires</Link>
-              <Link to="consulting" className="block py-2 text-xl cursor-pointer">Consulting Stratégique</Link>
-              <Link to="digital-transformation" className="block py-2 text-xl cursor-pointer">Transformation Digitale</Link>
-              <Link to="custom-development" className="block py-2 text-xl cursor-pointer">Développement sur Mesure</Link>
-            </div>
-          </div>
-
-          <Link to="contact" className="text-xl font-semibold hover:text-accent-green transition cursor-pointer">Contact</Link>
+          <Link to="accueil" className="text-xl font-semibold hover:text-soft-yellow transition cursor-pointer">Home</Link>
+          <Link to="about" className="text-xl font-semibold hover:text-soft-yellow transition cursor-pointer">About</Link>
+          <Link to="service" className="text-xl font-semibold hover:text-soft-yellow transition cursor-pointer">Services</Link>
+          <Link to="event" className="text-xl font-semibold hover:text-soft-yellow transition cursor-pointer">Events</Link>
+          <Link to="contact" className="text-xl font-semibold hover:text-soft-yellow transition cursor-pointer">Contact</Link>
         </div>
 
         <div className="lg:hidden flex items-center ml-auto">
@@ -44,8 +33,8 @@ const Header = () => {
           </button>
           {menuOpen && (
             <div className="absolute right-0 top-12 bg-primary-blue text-light-gray rounded-lg shadow-lg p-4">
-              <Link to="accueil" className="block py-2">Accueil</Link>
-              <Link to="about" className="block py-2">À propos</Link>
+              <Link to="accueil" className="block py-2">Home</Link>
+              <Link to="about" className="block py-2">About</Link>
               
               <div
                 className="relative"

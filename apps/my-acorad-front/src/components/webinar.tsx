@@ -23,10 +23,8 @@ const Webinar = () => {
         <div className="container mx-auto text-center">
           <h2 className="text-4xl font-semibold mb-8 text-primary-blue">Our Events</h2>
   
-          {/* Events: Upcoming & Past */}
           <div className="flex flex-wrap justify-center  space-x-6">
             
-            {/* Upcoming Events */}
             <div className="w-full md:w-1/2 lg:w-1/3 mb-6">
               <h3 className="text-3xl font-semibold text-primary-blue mb-4">Upcoming Events</h3>
               <div className="flex space-x-6 overflow-x-auto">
@@ -62,13 +60,12 @@ const Webinar = () => {
               </div>
             </div>
   
-            {/* Past Events */}
             <div className="w-full md:w-1/2 lg:w-1/3 mb-6">
               <h3 className="text-3xl font-semibold text-primary-blue mb-4">Past Events </h3>
               <div className="flex space-x-6 overflow-x-auto">
                 {pastEvents.map((webinar, index) => (
                   <div key={index} className="relative rounded-lg shadow-lg bg-white group overflow-hidden transition-all duration-500 transform hover:scale-105 border-transparent">
-                    <div className="relative w-full h-96"> {/* Ajustez la hauteur ici aussi */}
+                    <div className="relative w-full h-96"> 
                       <img
                         src={webinar.image}
                         alt={webinar.title}

@@ -3,7 +3,7 @@ const Webinar = () => {
       {
         title: 'How to complete a systematic literature review using AI',
         image: '/src/assets/images/webinar1.png',
-        link: 'https://forms.gle/VKPsseCC9KQBMxuN6',
+        link: 'https://docs.google.com/forms/d/1CmJSPJvktQY76Mr9rFOb7WtRSkrIbs4Kxxgwk5Uu_VI/edit',
         isUpcoming: true,
         description: 'Our next webinar, titled "AI in Systematic Literature Review," is scheduled for Friday, January 31st, 2025. This engaging session will delve into the transformative role of artificial intelligence in enhancing the systematic literature review process, offering valuable insights and practical applications.'
       },

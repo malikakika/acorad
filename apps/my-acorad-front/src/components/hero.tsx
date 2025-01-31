@@ -1,3 +1,5 @@
+import heroImage from '../assets/heroImage.png'
+
 const Hero = () => {
   return (
     <section
@@ -21,7 +23,7 @@ const Hero = () => {
 
         <div className="sm:w-1/2 mt-8 sm:mt-0 flex justify-center">
           <img
-            src="/src/assets/images/heroImage.png"
+            src={heroImage}
             alt="Acorad Illustration"
             className=" sm:w-4/5 h-auto rounded-lg shadow-lg"
           />

@@ -44,6 +44,6 @@ Thumbs.db
 # Next.js
 .next
 out
-
+.DS_Store
 vite.config.*.timestamp*
 vitest.config.*.timestamp*

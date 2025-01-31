@@ -5,11 +5,11 @@ import Vision from './vision';
 
 const AboutUs = () => {
   return (
-    <div id="about">
+    <section id="about">
       <OurAcademy />
       <Vision />
       <OurValue />
-    </div>
+    </section>
   );
 };
 

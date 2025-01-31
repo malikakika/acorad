@@ -1,6 +1,6 @@
 const Contact = () => {
   const handleContactClick = () => {
-    const mailtoLink = 'mailto:contact@acorad.com';
+    const mailtoLink = 'mailto:contact@acoradacademy.com';
     window.location.href = mailtoLink;
   };
   return (

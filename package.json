@@ -2,7 +2,9 @@
   "name": "@my-acorad/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "nx build my-acorad-front"
+  },
   "private": true,
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
@@ -22,7 +24,8 @@
     "react-router-dom": "6.11.2",
     "react-scroll": "^1.9.0",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.8.0"
+    "rxjs": "^7.8.0",
+    "react-scripts": "^5.0.0"
   },
   "devDependencies": {
     "@eslint/compat": "^1.1.1",
@@ -60,8 +63,9 @@
     "autoprefixer": "10.4.13",
     "babel-jest": "^29.7.0",
     "cypress": "^13.13.0",
-    "eslint": "^9.8.0",
-    "eslint-config-next": "14.2.16",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.16",
+    "@typescript-eslint/experimental-utils": "^5.62.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-cypress": "^3.5.0",
     "eslint-plugin-import": "2.31.0",

@@ -54,14 +54,14 @@ const Footer = () => {
           <h3 className="text-lg font-bold mb-4">Contact us</h3>
           <div className="text-sm flex items-center justify-center md:justify-end mb-2">
             <FaEnvelope className="mr-2 h-5 w-5" />
-            <a href="mailto:contact@acorad.com" className="hover:underline">
-              contact@acorad.com
+            <a href="mailto:contact@acoradacademy.com" className="hover:underline">
+              contact@acoradacademy.com
             </a>
           </div>
           <div className="text-sm flex items-center justify-center md:justify-end mb-4">
             <FaPhone className="mr-2 h-5 w-5" />
-            <a href="tel:+212123456789" className="hover:underline">
-              +212669933997
+            <a href="tel:+212669933997" className="hover:underline">
+              +212 (06) 69 93 39 97
             </a>
           </div>
           <div className="mt-4 flex justify-center md:justify-end space-x-4">

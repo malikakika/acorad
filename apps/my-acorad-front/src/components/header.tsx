@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-scroll';
 import { FaBars, FaTimes } from 'react-icons/fa';
-
+import logoBlanc from '../assets/logoBlanc.png';
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -17,7 +17,7 @@ const Header = () => {
       <nav className="container mx-auto flex justify-between items-center">
         <div>
           <img
-            src="/src/assets/images/logoBlanc.png"
+            src={logoBlanc}
             alt="Logo Acorad"
             className="h-20 ml-3"
           />
@@ -62,7 +62,7 @@ const Header = () => {
                   Consulting
                 </Link>
                 <Link
-                  to="webianire"
+                  to="webinar"
                   className="block py-2 text-xl cursor-pointer"
                 >
                   Webinaire

@@ -1,6 +1,6 @@
 import { getGreeting } from '../support/app.po';
 
-describe('acorad-e2e', () => {
+describe('mami-delice-e2e', () => {
   beforeEach(() => cy.visit('/'));
 
   it('should display welcome message', () => {

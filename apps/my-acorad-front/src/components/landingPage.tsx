@@ -8,7 +8,7 @@ import Webinar from './webinar';
 
 const LandingPage = () => {
   return (
-    <div id="about">
+    <div >
       <Header />
       <Hero />
       <About />

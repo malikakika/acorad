@@ -6,12 +6,11 @@ import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin';
 
 export default defineConfig({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/apps/my-acorad-front',
+  cacheDir: '../../node_modules/.vite/apps/mami-delice',
   server: {
     port: 4200,
     host: 'localhost',
   },
-  
   preview: {
     port: 4300,
     host: 'localhost',
@@ -22,7 +21,7 @@ export default defineConfig({
   //  plugins: [ nxViteTsPaths() ],
   // },
   build: {
-    outDir: '../../dist/apps/my-acorad-front',
+    outDir: '../../dist/apps/mami-delice',
     emptyOutDir: true,
     reportCompressedSize: true,
     commonjsOptions: {
@@ -36,7 +35,7 @@ export default defineConfig({
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     reporters: ['default'],
     coverage: {
-      reportsDirectory: '../../coverage/apps/my-acorad-front',
+      reportsDirectory: '../../coverage/apps/mami-delice',
       provider: 'v8',
     },
   },

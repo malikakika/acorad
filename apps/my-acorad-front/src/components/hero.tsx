@@ -1,23 +1,36 @@
+import heroImage from '../assets/heroImage.png'
+
 const Hero = () => {
-    return (
-      <section id="accueil" className="hero bg-primary-blue text-light-gray py-16 sm:py-24 animate-fade-in">
-        <div className="container mx-auto text-center px-4">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4">
-            Bienvenue sur Acorad
+  return (
+    <section
+      id="accueil"
+      className="hero bg-primary-blue text-light-gray pt-16 sm:pt-24 animate-fade-in"
+    >
+      <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between">
+        <div className="text-left sm:w-1/2">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold mb-6 leading-relaxed">
+            Welcome to Acorad: Empowering Your Future
           </h1>
-          <p className="text-base sm:text-lg lg:text-xl mb-8">
-            Nous aidons les entreprises à se réinventer à travers des solutions innovantes.
+          <p className="text-sm sm:text-lg lg:text-xl mb-16 leading-loose font-serif">
+            At Acorad, we don't just teach — we inspire.
+            <br /> <br />
+            Join us and transform your passion into expertise, with a commitment
+            to excellence and a promise to deliver tangible results.
+            <br /> <br />
+            Let's build the future, together.
           </p>
-          <a
-            href="#contact"
-            className="bg-accent-green text-primary-blue py-2 px-6 sm:py-3 sm:px-8 rounded-lg transition duration-300 hover:bg-accent-blue"
-          >
-            Contactez-nous
-          </a>
         </div>
-      </section>
-    );
-  };
-  
-  export default Hero;
-  
+
+        <div className="sm:w-1/2 mt-8 sm:mt-0 flex justify-center">
+          <img
+            src={heroImage}
+            alt="Acorad Illustration"
+            className=" sm:w-4/5 h-auto rounded-lg shadow-lg"
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;

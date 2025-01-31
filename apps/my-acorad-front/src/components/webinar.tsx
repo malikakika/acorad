@@ -1,39 +1,140 @@
+import React from 'react';
+import intervenant from '../assets/intervenant.jpeg';
+import intervenante from '../assets/intervenante.jpeg';
 
 const Webinar = () => {
   const webinars = [
     {
-      title: 'Webinaire 1: How to complete a systematic literature review using AI ',
-      image: '/src/assets/images/webinar1.jpeg',
-      link: 'https://forms.gle/VKPsseCC9KQBMxuN6'
+      title: 'How to complete a systematic literature review using AI',
+      link: 'https://docs.google.com/forms/d/1CmJSPJvktQY76Mr9rFOb7WtRSkrIbs4Kxxgwk5Uu_VI/edit',
+      isUpcoming: true,
+      description:
+        'Our next webinar, titled "AI in Systematic Literature Review," is scheduled for Friday, January 31st, 2025. This engaging session will delve into the transformative role of artificial intelligence in enhancing the systematic literature review process, offering valuable insights and practical applications.',
+      speaker: {
+        name: 'Przemysław Tomczyk, PhD',
+        bio: 'Assistant Professor at the Department Of Marketing at Kozminski University',
+        photo: intervenant, 
+      },
     },
     {
-      title: 'Webinaire 2: L’Importance de la Transformation Digitale',
-      image: '/src/assets/images/webinar2.jpg',
-      link: 'https://forms.gle/sampleLink2'
+      title: 'Workshop on Theory-driven research model',
+      isUpcoming: false,
+      description:
+        'On Saturday, November 16th, at 11:00 AM Morocco time, we held the workshop titled "Workshop on Theory-driven Research Model" on the Google Meet platform. Those who were interested filled out the form to receive a certificate after the training.',
+      speaker: {
+        name: 'Dr. Tasneem Fatima',
+        bio: 'Associate Professor Faculty of Management Sciences, International Islamic University',
+        photo: intervenante, 
+      },
     },
-    {
-      title: 'Webinaire 3: Comment réussir ses Entretiens',
-      image: '/src/assets/images/webinar3.jpg',
-      link: 'https://forms.gle/sampleLink3'
-    }
   ];
 
+  const upcomingEvents = webinars.filter((event) => event.isUpcoming);
+  const pastEvents = webinars.filter((event) => !event.isUpcoming);
+
   return (
-    <section id="webinars" className="bg-white py-20">
-      <div className="container mx-auto text-center">
-        <h2 className="text-4xl font-semibold mb-8 text-primary-blue">Nos Webinaires</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {webinars.map((webinar, index) => (
-            <div key={index} className="bg-gray-100 p-6 rounded-lg shadow-lg">
-              <img src={webinar.image} alt={webinar.title} className="w-full h-48 object-cover rounded-t-lg" />
-              <h3 className="text-2xl font-semibold mt-4 text-primary-blue">{webinar.title}</h3>
-              <a href={webinar.link} target="_blank" rel="noopener noreferrer" className="bg-accent-blue text-light-gray py-2 px-6 rounded-lg mt-4 inline-block hover:bg-accent-green transition duration-300">
-                S'inscrire
-              </a>
+    <section id="webinar" className="bg-vanilla py-20">
+    <div className="flex flex-wrap justify-center gap-12">
+  {/* Section for Upcoming Events */}
+  <div className="w-full md:w-1/2 lg:w-1/3 flex flex-col">
+    <h3 className="text-3xl font-semibold text-accent-blue mb-6">
+      Upcoming Events
+    </h3>
+    <div className="space-y-6">
+      {upcomingEvents.map((webinar, index) => (
+        <div
+          key={`upcoming-${index}`}
+          className="flex flex-col bg-white rounded-lg shadow-lg overflow-hidden p-6 h-full min-h-[400px]" // Ajout de min-h
+        >
+          <div className="flex items-center mb-4">
+            <img
+              src={webinar.speaker.photo}
+              alt={webinar.speaker.name}
+              className="w-40 h-40 rounded-full object-cover mr-4 border-2 border-accent-blue"
+            />
+            <div>
+              <p className="text-gray-800 font-medium">
+                {webinar.speaker.name}
+              </p>
+              <p className="text-gray-600 text-sm">
+                {webinar.speaker.bio}
+              </p>
             </div>
-          ))}
+          </div>
+          <div className="flex-grow">
+            <h4 className="text-lg font-semibold text-gray-800 mb-2">
+              {webinar.title}
+            </h4>
+            <p className="text-gray-600 mb-4 text-sm">
+              {webinar.description}
+            </p>
+          </div>
+          <div className="mt-auto">
+            <a
+              href={webinar.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-center bg-accent-blue text-white py-2 rounded-lg shadow hover:bg-blue-700 transition-all"
+            >
+              Register Now
+            </a>
+          </div>
         </div>
-      </div>
+      ))}
+    </div>
+  </div>
+
+  {/* Section for Past Events */}
+  <div className="w-full md:w-1/2 lg:w-1/3 flex flex-col">
+    <h3 className="text-3xl font-semibold text-accent-blue mb-6">
+      Past Events
+    </h3>
+    <div className="space-y-6">
+      {pastEvents.map((webinar, index) => (
+        <div
+          key={`past-${index}`}
+          className="flex flex-col bg-white rounded-lg shadow-lg overflow-hidden p-6 h-full min-h-[443px]" // Ajout de min-h
+        >
+          <div className="flex items-center mb-4">
+            <img
+              src={webinar.speaker.photo}
+              alt={webinar.speaker.name}
+              className="w-40 h-40 rounded-full object-cover mr-4 border-2 border-accent-blue"
+            />
+            <div>
+              <p className="text-gray-800 font-medium">
+                {webinar.speaker.name}
+              </p>
+              <p className="text-gray-600 text-sm">
+                {webinar.speaker.bio}
+              </p>
+            </div>
+          </div>
+          <div className="flex-grow">
+  <h4 className="text-lg font-semibold text-gray-800 mb-8">
+    {webinar.title}
+  </h4>
+  <p className="text-gray-600 mb-4 text-sm text-justify line-clamp-4">
+    {webinar.description}
+  </p>
+</div>
+
+          <div className="mt-auto">
+            <button
+              disabled
+              className="block w-full text-center bg-gray-400 text-white py-2 rounded-lg shadow cursor-not-allowed"
+            >
+              Registration Closed
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+ 
+
+
     </section>
   );
 };

@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { Link } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
+import { NavLink } from 'react-router-dom';
+
 import { FaBars, FaTimes } from 'react-icons/fa';
 import logoBlanc from '../assets/logoBlanc.png';
 const Header = () => {
@@ -9,71 +11,71 @@ const Header = () => {
   const handleServicesToggle = () => {
     setServicesOpen(!servicesOpen);
   };
-  const linkClasses = `
+  const ScrollLinkClasses = `
     text-xl font-semibold transition cursor-pointer hover:border-b-4 hover:border-dark-purple hover:font-bold
   `;
   return (
     <header className="bg-primary-blue text-light-gray py-4 shadow-lg">
       <nav className="container mx-auto flex justify-between items-center">
         <div>
-          <img
-            src={logoBlanc}
-            alt="Logo Acorad"
-            className="h-20 ml-3"
-          />
+          <img src={logoBlanc} alt="Logo Acorad" className="h-20 ml-3" />
         </div>
 
         <div className="hidden lg:flex space-x-6 relative ml-auto">
-          <Link to="accueil" className={linkClasses}>
+          <ScrollLink to="accueil" className={ScrollLinkClasses}>
             Home
-          </Link>
-          <Link to="about" className={linkClasses}>
+          </ScrollLink>
+          <ScrollLink to="about" className={ScrollLinkClasses}>
             About
-          </Link>
+          </ScrollLink>
 
           <div className="relative">
-            <button className={linkClasses} onClick={handleServicesToggle}>
+            <button
+              className={ScrollLinkClasses}
+              onClick={handleServicesToggle}
+            >
               Services
             </button>
             {servicesOpen && (
-              <div className="absolute left-0 bg-primary-blue text-light-gray rounded-lg shadow-lg p-2 space-y-2 mt-2 linkClasses">
-                <Link
+              <div className="absolute left-0 bg-primary-blue text-light-gray rounded-lg shadow-lg p-2 space-y-2 mt-2 ScrollLinkClasses">
+                <ScrollLink
                   to="services"
                   className="block py-2 text-xl cursor-pointer"
                 >
                   Training
-                </Link>
-                <Link
+                </ScrollLink>
+                <ScrollLink
                   to="services"
                   className="block py-2 text-xl cursor-pointer"
                 >
                   Conference
-                </Link>
-                <Link
-                  to="services"
+                </ScrollLink>
+                <NavLink
+                  to="/bootcamp"
                   className="block py-2 text-xl cursor-pointer"
                 >
                   Bootcamp
-                </Link>
-                <Link
+                </NavLink>
+
+                <ScrollLink
                   to="services"
                   className="block py-2 text-xl cursor-pointer"
                 >
                   Consulting
-                </Link>
-                <Link
+                </ScrollLink>
+                <ScrollLink
                   to="webinar"
                   className="block py-2 text-xl cursor-pointer"
                 >
                   Webinaire
-                </Link>
+                </ScrollLink>
               </div>
             )}
           </div>
 
-          <Link to="contact" className={linkClasses}>
+          <ScrollLink to="contact" className={ScrollLinkClasses}>
             Contact
-          </Link>
+          </ScrollLink>
         </div>
 
         <div className="lg:hidden flex items-center ml-auto">
@@ -94,20 +96,20 @@ const Header = () => {
               </button>
 
               <div className="mt-16 p-4">
-                <Link
+                <ScrollLink
                   to="accueil"
                   className="block py-2 text-xl cursor-pointer  transition"
                   onClick={() => setMenuOpen(false)}
                 >
                   Home
-                </Link>
-                <Link
+                </ScrollLink>
+                <ScrollLink
                   to="about"
                   className="block py-2 text-xl cursor-pointer  transition"
                   onClick={() => setMenuOpen(false)}
                 >
                   About
-                </Link>
+                </ScrollLink>
 
                 <div className="relative">
                   <button
@@ -118,52 +120,55 @@ const Header = () => {
                   </button>
                   {servicesOpen && (
                     <div className="mt-2 pl-4 space-y-2">
-                      <Link
+                      <ScrollLink
                         to="services"
                         className="block py-2 text-xl cursor-pointer"
                         onClick={() => setMenuOpen(false)}
                       >
                         Training
-                      </Link>
-                      <Link
+                      </ScrollLink>
+                      <ScrollLink
                         to="services"
                         className="block py-2 text-xl cursor-pointer"
                         onClick={() => setMenuOpen(false)}
                       >
                         Conference
-                      </Link>
-                      <Link
-                        to="services"
+                      </ScrollLink>
+                      <NavLink
+                        to="/bootcamp"
                         className="block py-2 text-xl cursor-pointer"
-                        onClick={() => setMenuOpen(false)}
+                        onClick={() => {
+                          setMenuOpen(false);
+                          setServicesOpen(false);
+                        }}
                       >
                         Bootcamp
-                      </Link>
-                      <Link
+                      </NavLink>
+                      <ScrollLink
                         to="services"
                         className="block py-2 text-xl cursor-pointer"
                         onClick={() => setMenuOpen(false)}
                       >
                         Consulting
-                      </Link>
-                      <Link
+                      </ScrollLink>
+                      <ScrollLink
                         to="webianire"
                         className="block py-2 text-xl cursor-pointer"
                         onClick={() => setMenuOpen(false)}
                       >
                         Webinaire
-                      </Link>
+                      </ScrollLink>
                     </div>
                   )}
                 </div>
 
-                <Link
+                <ScrollLink
                   to="contact"
                   className="block py-2 text-xl cursor-pointer  transition"
                   onClick={() => setMenuOpen(false)}
                 >
                   Contact
-                </Link>
+                </ScrollLink>
               </div>
             </div>
           )}

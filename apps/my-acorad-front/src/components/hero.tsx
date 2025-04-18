@@ -3,9 +3,10 @@ import heroImage from '../assets/heroImage.png'
 const Hero = () => {
   return (
     <section
-      id="accueil"
-      className="hero bg-primary-blue text-light-gray pt-16 sm:pt-24 animate-fade-in"
-    >
+    id="accueil"
+    className="hero bg-primary-blue text-light-gray pt-16 sm:pt-24 animate-fade-in overflow-visible"
+  >
+  
       <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between">
         <div className="text-left sm:w-1/2">
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold mb-6 leading-relaxed">

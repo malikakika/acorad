@@ -15,8 +15,8 @@ const Header = () => {
     text-xl font-semibold transition cursor-pointer hover:border-b-4 hover:border-dark-purple hover:font-bold
   `;
   return (
-    <header className="bg-primary-blue text-light-gray py-4 shadow-lg">
-      <nav className="container mx-auto flex justify-between items-center">
+<header className="bg-primary-blue text-light-gray py-4 shadow-lg overflow-visible">
+<nav className="container mx-auto flex justify-between items-center overflow-visible">
         <div>
           <img src={logoBlanc} alt="Logo Acorad" className="h-20 ml-3" />
         </div>
@@ -37,8 +37,8 @@ const Header = () => {
               Services
             </button>
             {servicesOpen && (
-              <div className="absolute left-0 bg-primary-blue text-light-gray rounded-lg shadow-lg p-2 space-y-2 mt-2 ScrollLinkClasses">
-                <ScrollLink
+              <div className="absolute left-0 z-50 bg-primary-blue text-light-gray rounded-lg shadow-lg p-2 space-y-2 mt-2">
+              <ScrollLink
                   to="services"
                   className="block py-2 text-xl cursor-pointer"
                 >

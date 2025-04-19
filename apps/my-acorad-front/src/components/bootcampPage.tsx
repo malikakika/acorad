@@ -258,60 +258,70 @@ const Bootcamp = () => {
         aria-label="Payment and cancellation policy"
       >
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-primary-blue text-center mb-10">
+          <h2 className="text-4xl font-bold text-primary-blue text-center mb-12">
             Payment & Cancellation
           </h2>
-          <div className="bg-vanilla p-8 rounded-xl shadow-md border border-gray-200 space-y-6 text-lg text-gray-700">
-            <div>
-              <h3 className="text-2xl font-semibold text-primary-blue flex items-center mb-3">
-                <FaMoneyCheckAlt className="mr-2" aria-hidden="true" /> Payment
-                Method
+
+          <div className="bg-gradient-to-br from-vanilla to-white p-10 rounded-3xl shadow-xl border border-gray-200 space-y-8 text-[1.05rem] text-gray-800 transition-all">
+            {/* Payment Method */}
+            <div className="space-y-2">
+              <h3 className="text-2xl font-semibold text-primary-blue flex items-center">
+                <FaMoneyCheckAlt className="mr-2 text-accent-blue text-xl" />
+                Payment Method
               </h3>
               <p>
                 Please pay via bank transfer and confirm at{' '}
                 <a
-                  href="mailto:acorad.academy@gmail.com"
-                  className="text-accent-blue underline"
+                  href="mailto:contact@acoradacademy.com"
+                  aria-label="Send a payment confirmation to Acorad by email"
                 >
-                  acorad.academy@gmail.com
+                  contact@acoradacademy.com
                 </a>
                 .
               </p>
             </div>
-            <div>
-              <h3 className="text-2xl font-semibold text-primary-blue flex items-center mb-3">
-                <FaUniversity className="mr-2" aria-hidden="true" /> Bank
-                Account
+
+            {/* Bank Info */}
+            <div className="space-y-2">
+              <h3 className="text-2xl font-semibold text-primary-blue flex items-center">
+                <FaUniversity className="mr-2 text-yellow-600 text-xl" />
+                Bank Account
               </h3>
-              <ul className="list-disc list-inside">
+              <ul className="list-none space-y-1 pl-1">
                 <li>
-                  <strong>Bank:</strong> BMCE Bank
+                  🏦 <strong>Bank:</strong> BMCE Bank
                 </li>
                 <li>
-                  <strong>Account:</strong> 011330000001210006612229
+                  🧾 <strong>Account:</strong> 011330000001210006612229
                 </li>
               </ul>
             </div>
-            <div>
-              <h3 className="text-2xl font-semibold text-primary-blue flex items-center mb-3">
-                <FaShieldAlt className="mr-2" aria-hidden="true" /> Security
-                Notice
+
+            {/* Security Notice */}
+            <div className="space-y-2">
+              <h3 className="text-2xl font-semibold text-primary-blue flex items-center">
+                <FaShieldAlt className="mr-2 text-red-500 text-xl" />
+                Security Notice
               </h3>
-              <p className="text-sm text-gray-600">
-                Always verify account info before transferring. Do not share
-                credentials.
+              <p className="text-sm text-gray-600 bg-red-50 p-3 rounded-lg border border-red-200">
+                ⚠️ Always verify account info before transferring. Never share
+                your credentials. If in doubt, contact us.
               </p>
             </div>
-            <div>
-              <h3 className="text-2xl font-semibold text-primary-blue mb-3">
+
+            {/* Cancellation */}
+            <div className="space-y-2 border-t pt-4">
+              <h3 className="text-2xl font-semibold text-primary-blue">
                 Cancellation Policy
               </h3>
-              <p>
-                ❌ 50% fee if canceled ≥14 days before the event.
-                <br />
-                ❌ No refund if &lt; 7 days.
-                <br />✅ Replacements allowed anytime.
-              </p>
+              <ul className="text-sm text-gray-700 list-disc list-inside space-y-1">
+                <li>
+                  ❌ 50% cancellation fee if canceled ≥ 14 days before the
+                  event.
+                </li>
+                <li>❌ No refund if canceled less than 7 days before.</li>
+                <li>✅ Participant replacements are allowed at any time.</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -319,58 +329,59 @@ const Bootcamp = () => {
 
       {/* Pricing */}
       <section
-  className="bg-gradient-to-b from-vanilla to-white py-20 px-4 sm:px-8"
-  role="region"
-  aria-label="Pricing details"
->
-  <h2 className="text-4xl sm:text-5xl font-extrabold text-primary-blue text-center mb-16">
-    Choose Your Plan
-  </h2>
-
-  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
-    {[
-      {
-        title: 'Early Bird',
-        price: '8500 MAD',
-        date: 'Until 21st June 2024',
-        note: 'Save with early registration',
-      },
-      {
-        title: 'Regular',
-        price: '10000 MAD',
-        date: 'Until 2nd July 2024',
-        note: 'Standard fee',
-      },
-      {
-        title: 'Group of 3',
-        price: '5% OFF / member',
-        date: 'Min. 3 participants',
-        note: 'Ideal for colleagues or friends',
-        badge: 'Best Value',
-      },
-    ].map(({ title, price, date, note, badge }, idx) => (
-      <div
-        key={idx}
-        className={`relative bg-white p-10 rounded-3xl shadow-xl border-t-4      transition-all duration-300 transform hover:scale-105 hover:rotate-1 hover:shadow-2xl`}
+        className="bg-gradient-to-b from-vanilla to-white py-20 px-4 sm:px-8"
+        role="region"
+        aria-label="Pricing details"
       >
-        {badge && (
-          <div
-            className={`absolute -top-4 right-4 bg-accent-green text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg uppercase tracking-wide`}
-          >
-            {badge}
-          </div>
-        )}
-        <h3 className="text-2xl font-bold text-dark-purple mb-3">{title}</h3>
-        <p className="text-4xl font-extrabold text-primary-blue mb-2">
-          {price}
-        </p>
-        <p className="text-sm text-gray-500 italic mb-6">{date}</p>
-        <p className="text-base text-gray-700">{note}</p>
-      </div>
-    ))}
-  </div>
-</section>
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-primary-blue text-center mb-16">
+          Choose Your Plan
+        </h2>
 
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+          {[
+            {
+              title: 'Early Bird',
+              price: '8500 MAD',
+              date: 'Until 21st June 2024',
+              note: 'Save with early registration',
+            },
+            {
+              title: 'Regular',
+              price: '10000 MAD',
+              date: 'Until 2nd July 2024',
+              note: 'Standard fee',
+            },
+            {
+              title: 'Group of 3',
+              price: '5% OFF / member',
+              date: 'Min. 3 participants',
+              note: 'Ideal for colleagues or friends',
+              badge: 'Best Value',
+            },
+          ].map(({ title, price, date, note, badge }, idx) => (
+            <div
+              key={idx}
+              className={`relative bg-white p-10 rounded-3xl shadow-xl border-t-4      transition-all duration-300 transform hover:scale-105 hover:rotate-1 hover:shadow-2xl`}
+            >
+              {badge && (
+                <div
+                  className={`absolute -top-4 right-4 bg-accent-green text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg uppercase tracking-wide`}
+                >
+                  {badge}
+                </div>
+              )}
+              <h3 className="text-2xl font-bold text-dark-purple mb-3">
+                {title}
+              </h3>
+              <p className="text-4xl font-extrabold text-primary-blue mb-2">
+                {price}
+              </p>
+              <p className="text-sm text-gray-500 italic mb-6">{date}</p>
+              <p className="text-base text-gray-700">{note}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* Registration Form */}
       <section
@@ -386,9 +397,7 @@ const Bootcamp = () => {
           <FormBootcamp />
         </div>
       </section>
-    
     </div>
-    
   );
 };
 

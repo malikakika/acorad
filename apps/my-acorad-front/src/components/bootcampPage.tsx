@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-scroll';
 import FormBootcamp from '../components/formBootcamp';
 import heroImage from '../assets/bootcampHero.jpg';
 import trainer from '../assets/tariqAhmed.jpeg';
-import { Link } from 'react-scroll';
 import {
   FaHandshake,
   FaChalkboardTeacher,
@@ -22,15 +22,31 @@ import {
   FaShieldAlt,
 } from 'react-icons/fa';
 
+const includedItems = [
+  { icon: FaPlane, label: 'Round Air Ticket' },
+  { icon: FaHotel, label: 'Six-Day Hotel Accommodation' },
+  { icon: FaUtensils, label: 'Daily Lunch + 2 Coffee Breaks' },
+  { icon: FaChalkboardTeacher, label: 'One Week Academic Program' },
+  { icon: FaBook, label: 'Classroom Materials' },
+  { icon: FaCertificate, label: 'Attendance Certificate' },
+  { icon: FaShip, label: 'Cruise Dinner + Welcome Dinner' },
+  { icon: FaCity, label: 'Istanbul City Tour' },
+  { icon: FaShuttleVan, label: 'Shuttle Hotel ↔ Venue' },
+  { icon: FaShuttleVan, label: 'Airport Transportation' },
+];
+
 const Bootcamp = () => {
   return (
-    <div>
+    <div className="text-gray-800">
+      {/* Hero Section */}
       <section
-        className="relative h-[90vh] bg-cover bg-center flex flex-col justify-center items-center text-center px-6 sm:px-10"
+        className="relative h-[100vh] bg-cover bg-center flex flex-col justify-center items-center text-center px-6 sm:px-10"
         style={{ backgroundImage: `url(${heroImage})` }}
+        role="region"
+        aria-label="Bootcamp hero banner"
       >
         <div className="absolute inset-0 bg-black opacity-60"></div>
-        <div className="relative z-10 text-white">
+        <div className="relative z-10 text-white animate-fade-in-up motion-reduce:transition-none">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4">
             Entrepreneurship and Business Start-up Bootcamp
           </h1>
@@ -42,14 +58,21 @@ const Bootcamp = () => {
             smooth={true}
             duration={500}
             offset={-50}
-            className="inline-block bg-accent-blue text-white px-8 py-3 text-lg font-semibold rounded-lg shadow-lg hover:bg-primary-blue transition-all cursor-pointer"
+            className="inline-block bg-accent-blue text-white px-8 py-3 text-lg font-semibold rounded-lg shadow-lg hover:bg-primary-blue transition-all cursor-pointer motion-reduce:transition-none"
+            role="button"
+            aria-label="Register for the bootcamp"
           >
             Register Now
           </Link>
         </div>
       </section>
 
-      <section className="py-16 px-6 sm:px-12 lg:px-32 text-center bg-white">
+      {/* Course Description */}
+      <section
+        className="py-16 px-6 sm:px-12 lg:px-32 text-center bg-white"
+        role="region"
+        aria-label="Bootcamp description"
+      >
         <h2 className="text-3xl font-bold text-primary-blue mb-4">
           Course Description
         </h2>
@@ -61,135 +84,124 @@ const Bootcamp = () => {
         </p>
       </section>
 
-      <section className="bg-vanilla py-16 px-6 sm:px-12 lg:px-32">
+      {/* Program Highlights */}
+      <section
+        className="bg-vanilla py-16 px-6 sm:px-12 lg:px-32"
+        role="region"
+        aria-label="Bootcamp highlights"
+      >
         <h2 className="text-3xl font-bold text-primary-blue text-center mb-10">
           Program Highlights
         </h2>
         <div className="grid gap-8 md:grid-cols-2 text-lg text-gray-700">
-          <div>
-            <div className="flex items-center gap-3 mb-2 text-primary-blue">
-              <FaHandshake className="text-xl" />
-              <h3 className="font-semibold text-lg">
-                Unique Interactive Sessions
-              </h3>
+          {[
+            {
+              icon: <FaHandshake className="text-xl" aria-hidden="true" />,
+              title: 'Unique Interactive Sessions',
+              desc: 'Engaging activities designed to spark creativity and entrepreneurial thinking.',
+            },
+            {
+              icon: (
+                <FaChalkboardTeacher className="text-xl" aria-hidden="true" />
+              ),
+              title: 'Inspiring Experiential Learning',
+              desc: 'Curriculum delivered by dynamic and passionate instructors.',
+            },
+            {
+              icon: <FaUserFriends className="text-xl" aria-hidden="true" />,
+              title: 'Work With Mentors',
+              desc: 'Collaborate with experienced entrepreneurs and industry experts.',
+            },
+            {
+              icon: <FaBullseye className="text-xl" aria-hidden="true" />,
+              title: 'Main Aims',
+              desc: (
+                <ul className="list-disc list-inside">
+                  <li>Support postgraduate students in research analysis.</li>
+                  <li>Help new lecturers produce impactful academic papers.</li>
+                </ul>
+              ),
+            },
+            {
+              icon: <FaUsers className="text-xl" aria-hidden="true" />,
+              title: 'Target Audience',
+              desc: (
+                <ul className="list-disc list-inside">
+                  <li>
+                    Lecturers and postgraduate students in higher institutions.
+                  </li>
+                  <li>Aspiring researchers preparing for empirical work.</li>
+                </ul>
+              ),
+            },
+          ].map((item, idx) => (
+            <div key={idx}>
+              <div className="flex items-center gap-3 mb-2 text-primary-blue">
+                {item.icon}
+                <h3 className="font-semibold text-lg">{item.title}</h3>
+              </div>
+              <div>{item.desc}</div>
             </div>
-            <p>
-              Engaging activities designed to spark creativity and
-              entrepreneurial thinking.
-            </p>
-          </div>
-          <div>
-            <div className="flex items-center gap-3 mb-2 text-primary-blue">
-              <FaChalkboardTeacher className="text-xl" />
-              <h3 className="font-semibold text-lg">
-                Inspiring Experiential Learning
-              </h3>
-            </div>
-            <p>Curriculum delivered by dynamic and passionate instructors.</p>
-          </div>
-          <div>
-            <div className="flex items-center gap-3 mb-2 text-primary-blue">
-              <FaUserFriends className="text-xl" />
-              <h3 className="font-semibold text-lg">Work With Mentors</h3>
-            </div>
-            <p>
-              Collaborate with experienced entrepreneurs and industry experts.
-            </p>
-          </div>
-          <div>
-            <div className="flex items-center gap-3 mb-2 text-primary-blue">
-              <FaBullseye className="text-xl" />
-              <h3 className="font-semibold text-lg">Main Aims</h3>
-            </div>
-            <ul className="list-disc list-inside">
-              <li>Support postgraduate students in research analysis.</li>
-              <li>Help new lecturers produce impactful academic papers.</li>
-            </ul>
-          </div>
-          <div>
-            <div className="flex items-center gap-3 mb-2 text-primary-blue">
-              <FaUsers className="text-xl" />
-              <h3 className="font-semibold text-lg">Target Audience</h3>
-            </div>
-            <ul className="list-disc list-inside">
-              <li>
-                Lecturers and postgraduate students in higher institutions.
-              </li>
-              <li>Aspiring researchers preparing for empirical work.</li>
-            </ul>
-          </div>
+          ))}
         </div>
       </section>
 
-      <section className="py-16 px-6 sm:px-12 lg:px-32 bg-white">
+      {/* What's Included */}
+      <section
+        className="py-16 px-6 sm:px-12 lg:px-32 bg-white"
+        role="region"
+        aria-label="Bootcamp benefits"
+      >
         <h2 className="text-3xl font-bold text-primary-blue text-center mb-10">
           What’s Included
         </h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 text-gray-800">
-          <ul className="space-y-3">
-            <li>
-              <FaPlane className="inline mr-2 text-primary-blue" /> Round Air
-              Ticket
-            </li>
-            <li>
-              <FaHotel className="inline mr-2 text-primary-blue" /> Six-Day
-              Hotel Accommodation
-            </li>
-            <li>
-              <FaUtensils className="inline mr-2 text-primary-blue" /> Daily
-              Lunch + 2 Coffee Breaks
-            </li>
-            <li>
-              <FaChalkboardTeacher className="inline mr-2 text-primary-blue" />{' '}
-              One Week Academic Program
-            </li>
-          </ul>
-          <ul className="space-y-3">
-            <li>
-              <FaBook className="inline mr-2 text-primary-blue" /> Classroom
-              Materials
-            </li>
-            <li>
-              <FaCertificate className="inline mr-2 text-primary-blue" />{' '}
-              Attendance Certificate
-            </li>
-            <li>
-              <FaShip className="inline mr-2 text-primary-blue" /> Cruise Dinner
-              + Welcome Dinner
-            </li>
-            <li>
-              <FaCity className="inline mr-2 text-primary-blue" /> Istanbul City
-              Tour
-            </li>
-          </ul>
-          <ul className="space-y-3">
-            <li>
-              <FaShuttleVan className="inline mr-2 text-primary-blue" /> Shuttle
-              Hotel ↔ Venue
-            </li>
-            <li>
-              <FaShuttleVan className="inline mr-2 text-primary-blue" /> Airport
-              Transportation
-            </li>
-          </ul>
+          {includedItems.map(({ icon: Icon, label }, idx) => (
+            <div key={idx} className="flex items-center gap-2">
+              <Icon className="text-primary-blue" aria-hidden="true" />
+              <span>{label}</span>
+            </div>
+          ))}
         </div>
       </section>
-      <section className="py-16 px-6 sm:px-12 lg:px-32 bg-accent-blue text-white">
-        <h2 className="text-3xl font-bold text-center mb-12">
+
+      {/* Meet Trainer */}
+      <section
+        className="py-16 px-6 sm:px-12 lg:px-32 bg-gradient-to-br from-accent-blue to-dark-purple text-white"
+        role="region"
+        aria-label="Meet your trainer"
+      >
+        <h2 className="text-4xl font-bold text-center mb-16 tracking-tight">
           Meet Your Trainer
         </h2>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_2fr] items-start gap-10">
-          <div className="w-full h-[480px] lg:h-[560px]">
-            <img
-              src={trainer}
-              alt="Dr Tariq Ahmed"
-              className="w-full h-full object-cover rounded-xl shadow-2xl"
-            />
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_2fr] items-center gap-10 animate-fade-in-up motion-reduce:transition-none">
+          {/* Image + LinkedIn */}
+          <div className="flex flex-col items-center justify-center w-full h-full space-y-4">
+            <div className="w-full h-[480px] lg:h-[560px]">
+              <img
+                src={trainer}
+                alt="Portrait of Dr. Tariq Ahmed"
+                className="w-full h-full object-cover rounded-2xl shadow-2xl transition-transform duration-500 hover:scale-105 ring-4 ring-white/10 motion-reduce:transition-none"
+              />
+            </div>
+            <a
+              href="https://www.linkedin.com/in/tariq-ahmed-07772782/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-white hover:text-soft-yellow underline transition-colors duration-300"
+              aria-label="View Dr. Tariq Ahmed’s LinkedIn profile"
+            >
+              👉 View Dr. Tariq Ahmed on LinkedIn
+            </a>
           </div>
 
-          <div className="text-lg space-y-5">
-            <h3 className="text-2xl font-semibold">Tariq Ahmed (Ph.D)</h3>
+          {/* Texte bio */}
+          <div className="text-lg space-y-6 leading-relaxed text-white/90">
+            <h3 className="text-3xl font-bold text-white">
+              Dr <span className="text-soft-yellow">Tariq Ahmed</span> (Ph.D)
+            </h3>
+
             <p>
               <strong>Assistant Professor</strong> at Rabat Business School,
               College of Management, International University of Rabat.
@@ -239,110 +251,144 @@ const Bootcamp = () => {
         </div>
       </section>
 
-      <section className="bg-white py-20 px-6 sm:px-12 lg:px-32">
+      {/* Payment & Cancellation */}
+      <section
+        className="bg-white py-20 px-6 sm:px-12 lg:px-32"
+        role="region"
+        aria-label="Payment and cancellation policy"
+      >
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-primary-blue text-center mb-10">
+          <h2 className="text-4xl font-bold text-primary-blue text-center mb-12">
             Payment & Cancellation
           </h2>
-          <div className="bg-vanilla p-8 rounded-xl shadow-md border border-gray-200 space-y-6 text-lg text-gray-700">
-            <div>
-              <h3 className="text-2xl font-semibold text-primary-blue flex items-center mb-3">
-                <FaMoneyCheckAlt className="mr-2" /> Payment Method
+
+          <div className="bg-gradient-to-br from-vanilla to-white p-10 rounded-3xl shadow-xl border border-gray-200 space-y-8 text-[1.05rem] text-gray-800 transition-all">
+            {/* Payment Method */}
+            <div className="space-y-2">
+              <h3 className="text-2xl font-semibold text-primary-blue flex items-center">
+                <FaMoneyCheckAlt className="mr-2 text-accent-blue text-xl" />
+                Payment Method
               </h3>
               <p>
-                Payment must be completed upon registration by international or
-                national bank transfer. Please send confirmation of payment to{' '}
+                Please pay via bank transfer and confirm at{' '}
                 <a
-                  href="mailto:acorad.academy@gmail.com"
-                  className="text-blue-600 underline"
+                  href="mailto:contact@acoradacademy.com"
+                  aria-label="Send a payment confirmation to Acorad by email"
                 >
-                  acorad.academy@gmail.com
+                  contact@acoradacademy.com
                 </a>
                 .
               </p>
             </div>
-            <div>
-              <h3 className="text-2xl font-semibold text-primary-blue flex items-center mb-3">
-                <FaUniversity className="mr-2" /> Bank Account Details
+
+            {/* Bank Info */}
+            <div className="space-y-2">
+              <h3 className="text-2xl font-semibold text-primary-blue flex items-center">
+                <FaUniversity className="mr-2 text-yellow-600 text-xl" />
+                Bank Account
               </h3>
-              <ul className="list-disc list-inside">
+              <ul className="list-none space-y-1 pl-1">
                 <li>
-                  <strong>Bank Name:</strong> BMCE Bank
+                  🏦 <strong>Bank:</strong> BMCE Bank
                 </li>
                 <li>
-                  <strong>Account Number:</strong> 011330000001210006612229
+                  🧾 <strong>Account:</strong> 011330000001210006612229
                 </li>
               </ul>
             </div>
-            <div>
-              <h3 className="text-2xl font-semibold text-primary-blue flex items-center mb-3">
-                <FaShieldAlt className="mr-2" /> Security Notice
+
+            {/* Security Notice */}
+            <div className="space-y-2">
+              <h3 className="text-2xl font-semibold text-primary-blue flex items-center">
+                <FaShieldAlt className="mr-2 text-red-500 text-xl" />
+                Security Notice
               </h3>
-              <p className="text-sm text-gray-600">
-                Always double-check the account details before making a
-                transfer. Do not share your banking credentials. For any
-                questions, contact us directly.
+              <p className="text-sm text-gray-600 bg-red-50 p-3 rounded-lg border border-red-200">
+                ⚠️ Always verify account info before transferring. Never share
+                your credentials. If in doubt, contact us.
               </p>
             </div>
-            <div>
-              <h3 className="text-2xl font-semibold text-primary-blue mb-3">
+
+            {/* Cancellation */}
+            <div className="space-y-2 border-t pt-4">
+              <h3 className="text-2xl font-semibold text-primary-blue">
                 Cancellation Policy
               </h3>
-              <p>
-                ❌ A 50% cancellation fee applies if cancelled 14+ days prior to
-                the event.
-                <br />
-                ❌ No refunds for cancellations less than 7 days before the
-                event.
-                <br />✅ Substitutions are welcome at any time.
-              </p>
+              <ul className="text-sm text-gray-700 list-disc list-inside space-y-1">
+                <li>
+                  ❌ 50% cancellation fee if canceled ≥ 14 days before the
+                  event.
+                </li>
+                <li>❌ No refund if canceled less than 7 days before.</li>
+                <li>✅ Participant replacements are allowed at any time.</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-gradient-to-b from-vanilla to-white ">
-        <h2 className="text-4xl font-bold text-primary-blue text-center mb-14">
-          Pricing
+      {/* Pricing */}
+      <section
+        className="bg-gradient-to-b from-vanilla to-white py-20 px-4 sm:px-8"
+        role="region"
+        aria-label="Pricing details"
+      >
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-primary-blue text-center mb-16">
+          Choose Your Plan
         </h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto text-center">
-          <div className="relative bg-white p-8 rounded-3xl shadow-xl border-t-4 border-blue-500 hover:shadow-2xl transition-all duration-300">
-            <h3 className="text-2xl font-semibold mb-2">Early Bird</h3>
-            <p className="text-3xl font-extrabold mb-2">8500DH</p>
-            <p className="text-sm text-gray-500 mb-4 italic">
-              Until 21st June 2024
-            </p>
-            <p className="text-base text-gray-700">
-              Save with early registration
-            </p>
-          </div>
-          <div className="relative bg-white p-8 rounded-3xl shadow-xl border-t-4 border-yellow-500 hover:shadow-2xl transition-all duration-300">
-            <h3 className="text-2xl font-semibold mb-2">Regular</h3>
-            <p className="text-3xl font-extrabold mb-2">10000DH</p>
-            <p className="text-sm text-gray-500 mb-4 italic">
-              Until 2nd July 2024
-            </p>
-            <p className="text-base text-gray-700">Standard fee</p>
-          </div>
-          <div className="relative bg-white p-8 rounded-3xl shadow-xl border-t-4 border-green-500 hover:shadow-2xl transition-all duration-300">
-            <span className="absolute -top-4 right-4 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded-full shadow">
-              Best Value
-            </span>
-            <h3 className="text-2xl font-semibold mb-2">Group of 3</h3>
-            <p className="text-3xl font-extrabold mb-2">5% OFF / member</p>
-            <p className="text-sm text-gray-500 mb-4 italic">
-              Min. 3 participants
-            </p>
-            <p className="text-base text-gray-700">
-              Ideal for colleagues or friends
-            </p>
-          </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+          {[
+            {
+              title: 'Early Bird',
+              price: '8500 MAD',
+              date: 'Until 21st June 2024',
+              note: 'Save with early registration',
+            },
+            {
+              title: 'Regular',
+              price: '10000 MAD',
+              date: 'Until 2nd July 2024',
+              note: 'Standard fee',
+            },
+            {
+              title: 'Group of 3',
+              price: '5% OFF / member',
+              date: 'Min. 3 participants',
+              note: 'Ideal for colleagues or friends',
+              badge: 'Best Value',
+            },
+          ].map(({ title, price, date, note, badge }, idx) => (
+            <div
+              key={idx}
+              className={`relative bg-white p-10 rounded-3xl shadow-xl border-t-4      transition-all duration-300 transform hover:scale-105 hover:rotate-1 hover:shadow-2xl`}
+            >
+              {badge && (
+                <div
+                  className={`absolute -top-4 right-4 bg-accent-green text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg uppercase tracking-wide`}
+                >
+                  {badge}
+                </div>
+              )}
+              <h3 className="text-2xl font-bold text-dark-purple mb-3">
+                {title}
+              </h3>
+              <p className="text-4xl font-extrabold text-primary-blue mb-2">
+                {price}
+              </p>
+              <p className="text-sm text-gray-500 italic mb-6">{date}</p>
+              <p className="text-base text-gray-700">{note}</p>
+            </div>
+          ))}
         </div>
       </section>
 
+      {/* Registration Form */}
       <section
         id="bootcamp-form"
         className="py-20 px-6 sm:px-12 lg:px-32 bg-white"
+        role="region"
+        aria-label="Registration form"
       >
         <div className="max-w-3xl mx-auto bg-white p-10 rounded-xl shadow-lg">
           <h2 className="text-3xl font-bold text-primary-blue mb-6 text-center">

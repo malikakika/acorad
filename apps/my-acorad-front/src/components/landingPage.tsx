@@ -1,6 +1,5 @@
 import About from './about';
 import Contact from './contact';
-import Footer from './footer';
 import Header from './header';
 import Hero from './hero';
 import Services from './services';
@@ -15,7 +14,6 @@ const LandingPage = () => {
       <Services />
       <Webinar />
       <Contact />
-      <Footer />
     </div>
   );
 };

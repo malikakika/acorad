@@ -45,7 +45,7 @@ const RegistrationSection = () => {
       </h2>
 
       <div className="grid md:grid-cols-2 gap-12 max-w-7xl mx-auto">
-        {/* Left: Info */}
+        
         <div className="text-sm text-gray-700 space-y-6">
           <p>
             All conference participants must pay the registration fee. For each paper,
@@ -105,7 +105,7 @@ const RegistrationSection = () => {
           </div>
         </div>
 
-        {/* Right: Form */}
+
         <div className="bg-vanilla p-6 sm:p-8 rounded-xl shadow-md">
           <h3 className="text-lg font-semibold text-dark-purple mb-4">Register Now</h3>
           <form className="space-y-4" onSubmit={handleSubmit}>

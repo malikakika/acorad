@@ -1,4 +1,5 @@
 
+import { Link } from 'react-scroll';
 
 const sections = [
     {
@@ -22,6 +23,37 @@ const AboutSection = () => {
   <p className="text-primary-blue whitespace-pre-line leading-relaxed text-left sm:text-justify">
     {sections[0].content}
   </p>
+</div>
+<div className="max-w-5xl mx-auto text-center">
+
+<p className="text-gray-700 text-left sm:text-justify text-sm font-semibold border-t border-gray-300 pt-4">
+
+  You can{' '}
+  <Link
+  to="keydates"
+            smooth={true}
+            duration={500}
+            offset={-50} className="text-dark-purple underline hover:text-blue-800 transition">
+    check the important dates
+  </Link>
+  ,{' '}
+  <Link
+  to="conference-form"
+            smooth={true}
+            duration={500}
+            offset={-50} className="text-dark-purple underline hover:text-blue-800 transition"> 
+    complete your registration
+  </Link>{' '}
+  and{' '}
+  <Link
+  to="speakers"
+            smooth={true}
+            duration={500}
+            offset={-50} className="text-dark-purple underline hover:text-blue-800 transition">
+    meet our keynote speakers
+  </Link>{' '}
+  who will make this conference truly inspiring.
+</p>
 </div>
 </section>
   );

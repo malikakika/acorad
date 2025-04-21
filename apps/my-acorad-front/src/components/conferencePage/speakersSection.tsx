@@ -31,7 +31,7 @@ const speakers = [
 const SpeakersSection = () => {
     return (
     <>
-    <section className="py-16 px-4 sm:px-8 lg:px-20 bg-white">
+    <section  id="speakers"  className="py-16 px-4 sm:px-8 lg:px-20 bg-white">
 <h2 className="text-3xl font-extrabold text-center text-dark-purple mb-12">
   Keynote Speakers
 </h2>

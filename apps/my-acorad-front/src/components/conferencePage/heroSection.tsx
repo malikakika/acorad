@@ -1,4 +1,5 @@
 
+import { Link } from 'react-scroll';
 import conferenceImage from '../../assets/conferenceHero.jpg';
 import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
@@ -35,12 +36,16 @@ aria-label="ICDAMI 2025 Conference Hero"
     International Conference on the Cross-Disciplinary Approach to
     Managing Innovation
   </p>
-  <a
-    href="#registration"
-    className="inline-block bg-accent-blue hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow transition"
-  >
+  <Link
+  to="conference-form"
+            smooth={true}
+            duration={500}
+            offset={-50}
+            className="inline-block bg-accent-blue text-white px-8 py-3 text-lg font-semibold rounded-lg shadow-lg hover:bg-primary-blue transition-all cursor-pointer motion-reduce:transition-none"
+            role="button"
+            aria-label="Register for the bootcamp">
     Register Now
-  </a>
+  </Link>
 </div>
 </section>
   );

@@ -5,6 +5,7 @@ import KeyDateSection from './keyDateSection';
 import SpeakersSection from './speakersSection';
 import JournalsSection from './journalsSection';
 import EventsSection from './eventSection';
+import RegistrationSection from './registartionSection';
 
 const ConferencePage = () => {
   return (
@@ -19,6 +20,8 @@ const ConferencePage = () => {
       <SpeakersSection />
       <JournalsSection />
       <EventsSection/>
+    
+      <RegistrationSection/>
     </main>
   );
 };

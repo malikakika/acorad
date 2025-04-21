@@ -44,12 +44,12 @@ const Header = () => {
                 >
                   Training
                 </ScrollLink>
-                <ScrollLink
-                  to="services"
+                <NavLink
+                  to="/conference"
                   className="block py-2 text-xl cursor-pointer"
                 >
                   Conference
-                </ScrollLink>
+                </NavLink>
                 <NavLink
                   to="/bootcamp"
                   className="block py-2 text-xl cursor-pointer"

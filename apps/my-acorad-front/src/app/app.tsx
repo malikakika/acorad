@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import LandingPage from '../components/landingPage';
 import Bootcamp from '../components/bootcampPage';
 import Footer from '../components/footer';
+import ConferencePage from '../components/conferencePage/conferencePage';
 
 const App = () => {
   return (
@@ -10,6 +11,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/bootcamp" element={<Bootcamp />} />
+        <Route path="/conference" element={<ConferencePage />} />
+
       </Routes>
       <Footer /> {/* Facultatif : pareil pour Footer */}
     </div>

@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import LandingPage from '../components/landingPage';
-import Bootcamp from '../components/bootcampPage';
+import Bootcamp from '../components/bootcampPage/bootcampPage';
 import Footer from '../components/footer';
 
 const App = () => {

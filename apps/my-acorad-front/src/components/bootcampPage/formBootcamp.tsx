@@ -25,7 +25,7 @@ const schema = yup.object().shape({
   ),
 });
 
-const FormBootcamp = () => {
+export const FormBootcamp = () => {
   const {
     register,
     control,
@@ -130,6 +130,13 @@ const [finalPrice, setFinalPrice] = useState('');
   return (
     <>
       <ToastContainer />
+      <section
+        id="bootcamp-form"
+        className="py-20 px-6 sm:px-12 lg:px-32 bg-white"
+        role="region"
+        aria-label="Registration form"
+      >
+       
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="max-w-3xl mx-auto p-8 bg-white shadow-xl rounded-2xl space-y-6"
@@ -314,14 +321,15 @@ const [finalPrice, setFinalPrice] = useState('');
           </button>
         </div>
       </form>
+      </section>
       <RegistrationSuccessModal
   show={showPopup}
   onClose={() => setShowPopup(false)}
   total={finalPrice}
 />
 
+
     </>
   );
 };
 
-export default FormBootcamp;

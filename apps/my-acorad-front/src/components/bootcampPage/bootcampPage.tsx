@@ -2,10 +2,12 @@ import {FormBootcamp} from './formBootcamp';
 import { HeroSection } from './heroSection';
 import { AboutSection } from './aboutSection';
 import { ProgramSection } from './programSection';
-import { IncludedSection } from './inclludedSection';
+import { IncludedSection } from './includedSection';
 import { TrainerSection } from './trainerSection';
 import { PaymentSection } from './PaymentSection';
 import { PricingSection } from './PricingSection';
+import { WhyJoinSection } from './whyJoinSection';
+import { ScheduleSection } from './scheduleSection';
 
 const Bootcamp = () => {
   return (
@@ -13,7 +15,9 @@ const Bootcamp = () => {
       <HeroSection />
       <AboutSection />
       <ProgramSection />
+      <WhyJoinSection/>
       <IncludedSection />
+      <ScheduleSection/>
       <TrainerSection />
       <PaymentSection />
       <PricingSection />

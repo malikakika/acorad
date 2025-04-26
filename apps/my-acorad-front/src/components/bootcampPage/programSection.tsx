@@ -1,71 +1,80 @@
+import {
+  FaHandshake,
+  FaChalkboardTeacher,
+  FaUserFriends,
+} from 'react-icons/fa';
+import interactiveImg from '../../assets/interactive.png';
+import experientialImg from '../../assets/experiential.png';
+import mentorshipImg from '../../assets/mentorship.png';
 
-import {FaUserFriends,
-FaBullseye,
-FaUsers,
-FaHandshake, FaChalkboardTeacher}from 'react-icons/fa';
+const highlights = [
+  {
+    image: interactiveImg,
+    icon: <FaHandshake className="text-white text-3xl" />,
+    title: 'Interactive Sessions',
+    desc: 'Experience dynamic group-based activities that ignite creativity and entrepreneurial thinking. No boring lectures — just energy, collaboration, and action!',
+    bg: 'bg-accent-blue',
+  },
+  {
+    image: experientialImg,
+    icon: <FaChalkboardTeacher className="text-white text-3xl" />,
+    title: 'Experiential Learning',
+    desc: 'Learn by doing. Dive into real-world case studies, simulations, and projects led by passionate educators with deep industry expertise.',
+    bg: 'bg-yellow-500',
+  },
+  {
+    image: mentorshipImg,
+    icon: <FaUserFriends className="text-white text-3xl" />,
+    title: 'Mentorship Access',
+    desc: 'Work hand-in-hand with accomplished mentors, entrepreneurs, and researchers. Get feedback, ask questions, and grow through meaningful exchange.',
+    bg: 'bg-green-600',
+  },
+];
 
-
-export const ProgramSection =()=>{
-    return (
+export const ProgramSection = () => {
+  return (
     <section
-    className="bg-vanilla py-16 px-6 sm:px-12 lg:px-32"
-    role="region"
-    aria-label="Bootcamp highlights"
-  >
-    <h2 className="text-3xl font-bold text-primary-blue text-center mb-10">
-      Program Highlights
-    </h2>
-    <div className="grid gap-8 md:grid-cols-2 text-lg text-gray-700">
-      {[
-        {
-          icon: <FaHandshake className="text-xl" aria-hidden="true" />,
-          title: 'Unique Interactive Sessions',
-          desc: 'Engaging activities designed to spark creativity and entrepreneurial thinking.',
-        },
-        {
-          icon: (
-            <FaChalkboardTeacher className="text-xl" aria-hidden="true" />
-          ),
-          title: 'Inspiring Experiential Learning',
-          desc: 'Curriculum delivered by dynamic and passionate instructors.',
-        },
-        {
-          icon: <FaUserFriends className="text-xl" aria-hidden="true" />,
-          title: 'Work With Mentors',
-          desc: 'Collaborate with experienced entrepreneurs and industry experts.',
-        },
-        {
-          icon: <FaBullseye className="text-xl" aria-hidden="true" />,
-          title: 'Main Aims',
-          desc: (
-            <ul className="list-disc list-inside">
-              <li>Support postgraduate students in research analysis.</li>
-              <li>Help new lecturers produce impactful academic papers.</li>
-            </ul>
-          ),
-        },
-        {
-          icon: <FaUsers className="text-xl" aria-hidden="true" />,
-          title: 'Target Audience',
-          desc: (
-            <ul className="list-disc list-inside">
-              <li>
-                Lecturers and postgraduate students in higher institutions.
-              </li>
-              <li>Aspiring researchers preparing for empirical work.</li>
-            </ul>
-          ),
-        },
-      ].map((item, idx) => (
-        <div key={idx}>
-          <div className="flex items-center gap-3 mb-2 text-primary-blue">
-            {item.icon}
-            <h3 className="font-semibold text-lg">{item.title}</h3>
+      className="bg-vanilla py-24 px-6 sm:px-12 lg:px-32"
+      role="region"
+      aria-labelledby="program-highlights-heading"
+    >
+      <h2
+        id="program-highlights-heading"
+        className="text-4xl sm:text-5xl font-extrabold text-primary-blue text-center mb-16"
+      >
+        Program Highlights
+      </h2>
+
+      <div className="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto">
+        {highlights.map((item, idx) => (
+          <div
+            key={idx}
+            className="bg-white rounded-3xl shadow-lg overflow-hidden transition hover:shadow-xl hover:scale-[1.02] flex flex-col relative"
+          >
+            <div className="relative">
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-full h-72 object-cover"
+              />
+              <div
+                className={`absolute -bottom-12 left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full flex items-center justify-center shadow-lg ring-4 ring-white ${item.bg}`}
+              >
+                {item.icon}
+              </div>
+            </div>
+
+            <div className="pt-16 pb-6 px-6 flex flex-col items-center text-center flex-grow">
+              <h3 className="text-lg font-bold text-dark-purple mb-2">
+                {item.title}
+              </h3>
+              <p className="text-sm text-gray-700 leading-relaxed">
+                {item.desc}
+              </p>
+            </div>
           </div>
-          <div>{item.desc}</div>
-        </div>
-      ))}
-    </div>
-  </section>
+        ))}
+      </div>
+    </section>
   );
 };

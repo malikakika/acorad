@@ -1,7 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
-import LandingPage from '../components/landingPage';
 import Bootcamp from '../components/bootcampPage/bootcampPage';
-import Footer from '../components/footer';
+import Footer from '../components/homePgae/footer';
+import LandingPage from '../components/homePgae/landingPage';
+import { CookieBanner } from '../components/cookieBanner';
 
 const App = () => {
   return (
@@ -11,7 +12,9 @@ const App = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="/bootcamp" element={<Bootcamp />} />
       </Routes>
-      <Footer /> {/* Facultatif : pareil pour Footer */}
+      <Footer /> 
+      <CookieBanner />
+
     </div>
   );
 };

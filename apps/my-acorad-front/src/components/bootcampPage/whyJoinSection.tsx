@@ -22,25 +22,65 @@ export const WhyJoinSection = () => {
           </div>
           <ul className="list-disc list-inside space-y-2 text-gray-700 text-base leading-relaxed">
             <li>
-              To assist postgraduate students in producing appropriate analysis for their research theses.
+              To develop entrepreneurial mindsets and competencies through
+              experiential learning and real-world business startup activities.
             </li>
             <li>
-              To assist new lecturers in producing research papers with higher-level analysis.
+              To enhance participants' ability to identify business
+              opportunities, understand market gaps, and address customer needs
+              effectively.
+            </li>
+            <li>
+              To equip students with practical skills such as idea generation,
+              market research, operational planning, financial management, and
+              fundraising for launching startups.
+            </li>
+            <li>
+              To foster teamwork, creativity, and innovation by working
+              collaboratively on venture creation projects and engaging with
+              entrepreneurs and industry experts.
+            </li>
+            <li>
+              To provide direct exposure to entrepreneurial ecosystems through
+              site visits to incubation centers, startup hubs, and chamber of
+              commerce offices in international settings.
             </li>
           </ul>
         </div>
 
         <div className="bg-gradient-to-br from-vanilla to-white p-8 rounded-3xl shadow-md border border-gray-200 h-full">
           <div className="flex items-center gap-3 mb-4">
-            <FaUserGraduate className="text-primary-blue text-2xl" aria-hidden="true" />
-            <h3 className="text-xl font-bold text-dark-purple">Target Audience</h3>
+            <FaUserGraduate
+              className="text-primary-blue text-2xl"
+              aria-hidden="true"
+            />
+            <h3 className="text-xl font-bold text-dark-purple">
+              Target Audience
+            </h3>
           </div>
           <ul className="list-disc list-inside space-y-2 text-gray-700 text-base leading-relaxed">
             <li>
-              Lecturers and postgraduate students in institutions of higher learning.
+              Undergraduate and graduate business students with an interest in
+              entrepreneurship and innovation.
             </li>
             <li>
-              Aspiring researchers intending to embark on empirical research.
+              Aspiring entrepreneurs seeking to launch their own startups or
+              join entrepreneurial ventures.
+            </li>
+
+            <li>
+              Students interested in experiential learning models who want to
+              build practical skills alongside academic knowledge.
+            </li>
+
+            <li>
+              Young professionals and early-career individuals aiming to
+              strengthen their entrepreneurial competencies.
+            </li>
+
+            <li>
+              Participants from international backgrounds seeking global
+              exposure to entrepreneurship ecosystems in Turkey, or Morocco.{' '}
             </li>
           </ul>
         </div>

@@ -37,7 +37,7 @@ const includedItems = [
   },
   {
     icon: FaHotel,
-    label: '6 Nights Hotel Accommodation',
+    label: '5 Nights Hotel Accommodation',
     detail:
       'Comfortable rooms in a 4-star hotel for the entire duration of the bootcamp.',
   },

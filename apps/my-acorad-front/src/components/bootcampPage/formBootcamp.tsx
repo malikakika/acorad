@@ -9,8 +9,17 @@ import RegistrationSuccessModal from './registrationSuccessModal';
 const schema = yup.object().shape({
   registration_type: yup.string().required('Please select a registration type'),
   full_name: yup.string().required('Full name is required'),
-  email: yup.string().email('Invalid email').required('Email is required'),
-  phone: yup.string().required('Phone number is required'),
+  email: yup
+    .string()
+    .email('Please enter a valid email address')
+    .required('Email is required'),
+  phone: yup
+    .string()
+    .required('Phone number is required')
+    .matches(
+      /^\+?[0-9\s-]{7,15}$/,
+      'Phone number must be valid (digits, optional +, -, spaces)'
+    ),
   country: yup.string(),
   university: yup.string(),
   address: yup.string().required('Address is required'),
@@ -30,6 +39,8 @@ export const FormBootcamp = () => {
   const [otherSource, setOtherSource] = useState('');
   const [showPopup, setShowPopup] = useState(false);
   const [finalPrice, setFinalPrice] = useState('');
+
+  const isBeforeDeadline = new Date() <= new Date('2025-05-16');
 
   const inputClass =
     'w-full px-4 py-3 border border-gray-300 rounded-xl bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-blue transition duration-200';
@@ -59,17 +70,17 @@ export const FormBootcamp = () => {
         const type = data.registration_type;
 
         if (type === 'Full Package') {
-          total = 10000;
+          total = isBeforeDeadline ? 9000 : 10000;
         } else if (type === 'Partial Package') {
-          total = 8500;
+          total = isBeforeDeadline ? 4000 : 5000;
         } else if (type === 'Program Package') {
-          total = 7500;
+          total = isBeforeDeadline ? 2500 : 3500;
         }
 
         setFinalPrice(`${total.toFixed(2)} MAD`);
         setShowPopup(true);
 
-        toast.success(' Registration successfully submitted!', {
+        toast.success('🎉 Registration successfully submitted!', {
           position: 'top-center',
           autoClose: 3000,
         });
@@ -108,6 +119,12 @@ export const FormBootcamp = () => {
             Bootcamp Registration Form
           </h2>
 
+          {isBeforeDeadline && (
+            <div className="text-green-800 bg-green-100 border border-green-300 rounded-lg px-4 py-3 text-center text-base font-medium shadow-sm">
+              🎁 <strong>Early Bird Discount:</strong> Register before <strong>16 May 2025</strong> and get <strong>1000 MAD OFF</strong> your selected package!
+            </div>
+          )}
+
           <div className="space-y-2">
             <p className="font-semibold">Select Registration Type *</p>
             {['Full Package', 'Partial Package', 'Program Package'].map((type) => (
@@ -143,12 +160,15 @@ export const FormBootcamp = () => {
             <p className="text-sm text-red-500 mt-1">{errors.email?.message}</p>
           </div>
 
-          <input
-            {...register('phone')}
-            type="text"
-            placeholder="Phone Number"
-            className={inputClass}
-          />
+          <div>
+            <input
+              {...register('phone')}
+              type="text"
+              placeholder="Phone Number *"
+              className={inputClass}
+            />
+            <p className="text-sm text-red-500 mt-1">{errors.phone?.message}</p>
+          </div>
 
           <input
             {...register('country')}

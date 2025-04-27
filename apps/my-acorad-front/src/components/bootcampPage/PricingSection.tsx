@@ -9,6 +9,13 @@ import {
 } from 'react-icons/fa';
 
 export const PricingSection = () => {
+  const isEarlyBird = new Date() < new Date('2025-05-16');
+
+  const getReducedPrice = (price: string) => {
+    const num = parseInt(price.replace(/[^\d]/g, ''), 10);
+    return `${(num - 1000).toLocaleString()} MAD`;
+  };
+
   const packages = [
     {
       title: 'Full Package',
@@ -29,7 +36,7 @@ export const PricingSection = () => {
     },
     {
       title: 'Partial Package',
-      price: '8,500 MAD',
+      price: '5,000 MAD',
       highlight: 'Airfare not included',
       features: [
         { icon: <FaPlaneDeparture className="text-red-500" />, text: 'Round-trip airfare NOT included' },
@@ -46,7 +53,7 @@ export const PricingSection = () => {
     },
     {
       title: 'Program Package',
-      price: '7,500 MAD',
+      price: '3,500 MAD',
       highlight: 'Only core program services',
       features: [
         { icon: <FaPlaneDeparture className="text-red-500" />, text: 'Round-trip airfare NOT included' },
@@ -84,6 +91,12 @@ export const PricingSection = () => {
             tabIndex={0}
             aria-labelledby={`package-title-${idx}`}
           >
+            {isEarlyBird && (
+              <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-green-500 text-white text-sm font-semibold px-4 py-1 rounded-full shadow-lg z-10 animate-bounce">
+                🎁 Register before 16 May and get 1000 MAD off!
+              </div>
+            )}
+
             <div>
               <h3
                 id={`package-title-${idx}`}
@@ -91,9 +104,18 @@ export const PricingSection = () => {
               >
                 {pack.title}
               </h3>
+
               <p className="text-xl font-extrabold text-primary-blue mb-4">
-                {pack.price}
+                {isEarlyBird ? (
+                  <>
+                    <span className="line-through text-gray-400 mr-2">{pack.price}</span>
+                    {getReducedPrice(pack.price)}
+                  </>
+                ) : (
+                  pack.price
+                )}
               </p>
+
               <p className="text-base text-gray-600 italic mb-6">
                 {pack.highlight}
               </p>

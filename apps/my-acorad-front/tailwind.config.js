@@ -9,7 +9,7 @@ module.exports = {
         'light-gray': '#f7f7f7',
         'dark-purple': '#5E365F',
         'soft-yellow': '#FCCB82',
-        vanilla: '#F7EEDC',
+        'vanilla': '#F7EEDC',
       },
       keyframes: {
         'fade-in': {

@@ -1,0 +1,25 @@
+.perspective {
+    perspective: 1200px;
+  }
+  .card3d {
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+  .card3d:hover {
+    transform: rotateY(180deg);
+  }
+  .card-face {
+    backface-visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+  }
+  .card-back {
+    transform: rotateY(180deg);
+  }
+  
+
+
+ 

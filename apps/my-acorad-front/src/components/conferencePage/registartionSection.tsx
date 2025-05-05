@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import PaymentModal from './paymentModal';
 
 const RegistrationSection = () => {
   const [formData, setFormData] = useState({
-    fullName: '',
+    firstName: '',
+    lastName: '',
     email: '',
     category: '',
     galaDinner: false,
   });
+  const [showModal, setShowModal] = useState(false);
+  const [amountToPay, setAmountToPay] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const target = e.target as HTMLInputElement;
@@ -17,8 +21,44 @@ const RegistrationSection = () => {
     }));
   };
 
+  const getPrice = () => {
+    const isEarlyBird = new Date() <= new Date('2025-09-05');
+    let amount = '';
+
+    switch (formData.category) {
+      case 'International Presenter':
+        amount = isEarlyBird ? '100 USD' : '150 USD';
+        break;
+      case 'Local Presenter':
+        amount = isEarlyBird ? '1000 DH' : '1500 DH';
+        break;
+      case 'PhD Student (Local)':
+        amount = isEarlyBird ? '700 DH' : '900 DH';
+        break;
+      case 'PhD Student (International)':
+        amount = isEarlyBird ? '70 USD' : '90 USD';
+        break;
+      case 'Observer':
+        amount = '200 DH';
+        break;
+      default:
+        amount = 'N/A';
+    }
+
+    if (formData.galaDinner) {
+      amount += isEarlyBird ? ' + 300 DH / 30 USD (Gala)' : ' + 400 DH / 40 USD (Gala)';
+    }
+
+    return amount;
+  };
+
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const total = getPrice();
+    setAmountToPay(total);
+    setShowModal(true);
 
     try {
       await fetch('https://sheetdb.io/api/v1/2qouh2n2091hi', {
@@ -27,8 +67,7 @@ const RegistrationSection = () => {
         body: JSON.stringify({ data: formData }),
       });
 
-      alert('Registration submitted successfully!');
-      setFormData({ fullName: '', email: '', category: '', galaDinner: false });
+      setFormData({ firstName: '', lastName: '', email: '', category: '', galaDinner: false });
     } catch (err) {
       alert('Submission failed. Please try again.');
     }
@@ -110,10 +149,20 @@ const RegistrationSection = () => {
           <h3 className="text-lg font-semibold text-dark-purple mb-4">Register Now</h3>
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
-              <label className="block mb-1 font-medium">Full Name</label>
+              <label className="block mb-1 font-medium">First Name</label>
               <input
-                name="fullName"
-                value={formData.fullName}
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+                required
+                className="w-full p-2 border rounded"
+              />
+            </div>
+            <div>
+              <label className="block mb-1 font-medium">Last Name</label>
+              <input
+                name="lastName"
+                value={formData.lastName}
                 onChange={handleChange}
                 required
                 className="w-full p-2 border rounded"
@@ -164,6 +213,11 @@ const RegistrationSection = () => {
             </button>
           </form>
         </div>
+        <PaymentModal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+        total={amountToPay}
+      />
       </div>
     </section>
   );

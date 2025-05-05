@@ -14,11 +14,13 @@ import {
 } from 'react-icons/fa';
 
 const IconText = ({ icon, text }: { icon: JSX.Element; text: string }) => (
-    <div className="flex items-center gap-3 mb-1 transition duration-300 hover:scale-105">
-      <span className="text-xl text-accent-blue" aria-hidden="true">{icon}</span>
-      <span className="text-sm text-gray-700 leading-snug">{text}</span>
-    </div>
-  );
+  <div className="flex items-center gap-3 mb-1 transition duration-300 hover:scale-105">
+    <span className="text-xl text-accent-blue" aria-hidden="true">
+      {icon}
+    </span>
+    <span className="text-sm text-gray-700 leading-snug">{text}</span>
+  </div>
+);
 
 export const ScheduleSection = () => {
   const schedule = [
@@ -127,10 +129,15 @@ export const ScheduleSection = () => {
         id="schedule-heading"
         className="text-4xl sm:text-5xl font-extrabold text-center mb-4 text-primary-blue flex items-center justify-center gap-4"
       >
-        <FaCalendarAlt className="text-4xl text-accent-blue animate-pulse" /> Bootcamp Weekly Schedule
+        <FaCalendarAlt className="text-4xl text-accent-blue animate-pulse" />{' '}
+        Bootcamp Weekly Schedule
       </h2>
-      <p className="text-center text-lg text-gray-600 mb-16 max-w-3xl mx-auto">
-        Discover each day’s key activities, sessions, and interactive highlights.
+      <p className="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-2">
+        Discover each day’s key activities, sessions, and interactive
+        highlights.
+      </p>
+      <p className="text-center text-sm italic text-gray-500 mb-16">
+        Tentative schedule — subject to slight changes
       </p>
 
       <div className="w-full overflow-x-auto rounded-xl shadow-2xl border border-gray-300">
@@ -139,8 +146,12 @@ export const ScheduleSection = () => {
             <tr>
               <th className="px-4 sm:px-6 py-4 font-semibold">Date</th>
               <th className="px-4 sm:px-6 py-4 font-semibold">Day</th>
-              <th className="px-4 sm:px-6 py-4 font-semibold">Morning Session</th>
-              <th className="px-4 sm:px-6 py-4 font-semibold">Midday Session</th>
+              <th className="px-4 sm:px-6 py-4 font-semibold">
+                Morning Session
+              </th>
+              <th className="px-4 sm:px-6 py-4 font-semibold">
+                Midday Session
+              </th>
             </tr>
           </thead>
           <tbody>

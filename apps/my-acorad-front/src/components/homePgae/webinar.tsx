@@ -1,6 +1,6 @@
 import React from 'react';
-import intervenant from '../assets/intervenant.jpeg';
-import intervenante from '../assets/intervenante.jpeg';
+import intervenant from '../../assets/intervenant.jpeg';
+import intervenante from '../../assets/intervenante.jpeg';
 
 const Webinar = () => {
   const webinars = [

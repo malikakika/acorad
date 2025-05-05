@@ -3,7 +3,7 @@ import { Link as ScrollLink } from 'react-scroll';
 import { NavLink } from 'react-router-dom';
 
 import { FaBars, FaTimes } from 'react-icons/fa';
-import logoBlanc from '../assets/logoBlanc.png';
+import logoBlanc from '../../assets/logoBlanc.png';
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);

@@ -2,8 +2,8 @@
 
 import Guest1 from '../../assets/SabriBOUBAKER.webp';
 import Guest2 from '../../assets/MuhammadUsman.jpeg';
+import Guest3 from '../../assets/OsmanKaratepe.jpg';
 import Guest4 from '../../assets/ChristinaTheodoraki.png';
-import hassan2Logo from '../../assets/hassan2Logo.png';
 
 const speakers = [
     {
@@ -19,7 +19,7 @@ const speakers = [
     {
       name: 'Osman M. Karatepe',
       role: 'Eastern Mediterranean University\nFaculty of Tourism\nFamagusta, North Cyprus',
-      image: Guest1,
+      image: Guest3,
     },
     {
       name: 'Christina Theodoraki',
@@ -62,7 +62,7 @@ const SpeakersSection = () => {
 </div>
 </section>
 
-<section className="py-16 px-4 sm:px-8 lg:px-20 bg-vanilla">
+{/* <section className="py-16 px-4 sm:px-8 lg:px-20 bg-vanilla">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-dark-purple mb-6">
             Co-organizer
@@ -80,7 +80,7 @@ const SpeakersSection = () => {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
       </>
   );
 };

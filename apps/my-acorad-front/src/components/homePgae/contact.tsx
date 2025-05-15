@@ -1,8 +1,10 @@
 const Contact = () => {
   const handleContactClick = () => {
-    const mailtoLink = 'mailto:contact@acoradacademy.com';
-    window.location.href = mailtoLink;
+    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=contact@acoradacademy.com&su=Free%20Consultation%20Request&body=Hello,%0A%0AI would like to get a free consultation with one of your experts.%0A%0AMy details:%0AFull Name:%0AEmail:%0AWhat I need help with:%0A%0AThank you!`;
+
+    window.open(gmailLink, '_blank');
   };
+
   return (
     <section
       id="contact"

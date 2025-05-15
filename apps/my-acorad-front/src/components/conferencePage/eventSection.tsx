@@ -1,5 +1,7 @@
 import galaImage from '../../assets/gala.jpg';
 import cafeImage from '../../assets/cafe.jpg';
+import cityTourImage from '../../assets/casaCity.jpeg';
+
 
 const events = [
   {
@@ -8,9 +10,14 @@ const events = [
     description: `At the Gala Dinner you will have the opportunity to enjoy culinary specialities from all parts of Morocco. The closing event will take place in a stunning and unique atmosphere. In addition to culinary delights, the program will be enriched by the vocal artists. Look forward to an unforgettable evening as the closing event of ICDAMI-2025.`,
   },
   {
-    title: 'Academic Café',
+    title: 'Academic Coffee',
     image: cafeImage,
     description: `We will provide an opportunity to the PhD students and nascent researchers to meet with the learned professors and receive constructive feedback on their ongoing and future research.`,
+  },
+  {
+    title: 'City Tour – Discover Casablanca',
+    image: cityTourImage,
+    description: `Enjoy a cultural half-day tour of Casablanca! You'll visit iconic sites including the Sacré-Cœur Church, Mohammed V Square, the Old Medina, the majestic Hassan II Mosque, and stroll along La Corniche. This 3.5-hour tour will immerse you in the city's rich heritage and modern flair.`,
   },
 ];
 
@@ -21,13 +28,13 @@ const EventsSection = () => {
         Special Events
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-        {events.map((event, index) => (
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+      {events.map((event, index) => (
           <div
             key={index}
             className="bg-white rounded-3xl shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition"
           >
-            <div className="h-80 w-full overflow-hidden">
+            <div className="h-96 w-full overflow-hidden">
               <img
                 src={event.image}
                 alt={event.title}

@@ -1,91 +1,141 @@
+import React, { useState } from 'react';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import themesImage from '../../assets/themes-illustration.png';
-import publicationImage from '../../assets/publication-opportunit.png';
 
-const sections = [
+const themes = [
   {
-    title: 'About the Conference',
-    content: `Organized by the Academy of Research and Development, in collaboration with Hassan II University, Casablanca, Morocco, ICDAMI-2025 welcomes scholars, industry professionals, and innovation leaders to participate in the International Conference on the Cross-Disciplinary Approach to Managing Innovation (ICDAMI-2025), to be held on 13–14 November 2025 in Morocco.
-  
-  In an era defined by rapid technological change and AI-driven transformation, organizations across sectors face growing complexity, global competition, and evolving consumer expectations. As such, achieving and sustaining competitive advantage now requires the fusion of artificial intelligence, emerging technologies, and innovative management strategies.
-  
-  ICDAMI-2025 serves as a global forum for academics, researchers, AI experts, entrepreneurs, and policymakers to share research findings, explore emerging trends, and engage in high-impact dialogue. This interdisciplinary platform aims to bridge gaps between business domains and technological innovation, promoting cross-sector collaboration and transformative business practices.`,
-  },
-  {
-    title: 'Key/Major Themes',
-    image: themesImage,
-    content: [
-      'AI-Driven Strategy and Innovation Management',
-      'Marketing, Consumer Insights & Digital Engagement',
-      'Human Capital & Organizational Transformation',
-      'Operations, Supply Chain & Smart Logistics',
-      'Finance, Accounting & FinTech Innovation',
-      'Entrepreneurship, Startups & Ecosystem Innovation',
-      'AI in Business Education & Learning Innovation',
-      'Sustainability, Ethics & Responsible Innovation',
-      'International Business & Cross-Cultural Dynamics',
-      'Public Policy, Governance & Regulation',
+    title: 'AI-Driven Strategy and Innovation Management',
+    items: [
+      'Business model innovation in the AI era',
+      'Strategic foresight and scenario planning using AI',
+      'Disruptive and open innovation ecosystems',
+      'Cross-industry digital transformation',
     ],
   },
   {
-    title: 'Publication Opportunities',
-    image: publicationImage,
-    content: `ICDAMI-2025 offers authors the opportunity to publish and disseminate their work through the following channels
-  
-  Special Issue Publication: All accepted papers will be considered for publication in a special issue of selected peer-reviewed books associated with the conference. Further details regarding partner books and submission guidelines will be shared with authors upon acceptance.
-  
-  Conference Proceedings: All accepted and presented papers will be published in the official ICDAMI-2025 Conference Proceedings, which will be professionally compiled and made publicly accessible.
-  
-  DOI Assignment:Each published paper will be assigned a Digital Object Identifier (DOI) through CrossRef, ensuring permanent accessibility and citation tracking.
-  
-  Indexing & Visibility:The proceedings will be submitted to Google Scholar for indexing to maximize academic reach and visibility.`,
+    title: 'Marketing, Consumer Insights & Digital Engagement',
+    items: [
+      'AI in consumer behavior analysis and personalization',
+      'Predictive marketing, chatbots, and virtual agents',
+      'Neuromarketing, sentiment analysis, and social listening',
+      'Ethical AI in branding and advertising',
+    ],
+  },
+  {
+    title: 'Human Capital & Organizational Transformation',
+    items: [
+      'AI-powered HR analytics and recruitment',
+      'Human-AI collaboration and future of work',
+      'Leadership, culture, and change management in AI-enabled firms',
+      'Workforce reskilling and lifelong learning strategies',
+    ],
+  },
+  {
+    title: 'Operations, Supply Chain & Smart Logistics',
+    items: [
+      'AI in supply chain forecasting, risk, and agility',
+      'Automation, IoT, and real-time optimization',
+      'Smart manufacturing and Industry 4.0',
+      'Sustainable and circular supply chains with AI',
+    ],
+  },
+  {
+    title: 'Finance, Accounting & FinTech Innovation',
+    items: [
+      'Algorithmic trading, credit scoring, and robo-advisors',
+      'AI in fraud detection, auditing, and compliance',
+      'Blockchain-AI convergence in financial systems',
+      'FinTech ecosystems and regulatory innovation',
+    ],
+  },
+  {
+    title: 'Entrepreneurship, Startups & Ecosystem Innovation',
+    items: [
+      'AI as a catalyst for entrepreneurial decision-making',
+      'Digital incubators, accelerators, and venture analytics',
+      'Social and sustainable entrepreneurship powered by AI',
+      'Entrepreneurial education and AI tools for startups',
+    ],
+  },
+  {
+    title: 'AI in Business Education & Learning Innovation',
+    items: [
+      'AI-enabled adaptive learning and intelligent tutoring',
+      'Virtual classrooms and immersive business simulations',
+      'AI for assessment, feedback, and learner analytics',
+      'Cross-disciplinary learning environments and curriculum innovation',
+    ],
+  },
+  {
+    title: 'Sustainability, Ethics & Responsible Innovation',
+    items: [
+      'AI for climate action and environmental monitoring',
+      'ESG and impact measurement using AI tools',
+      'Bias, transparency, and fairness in AI systems',
+      'Designing inclusive, ethical, and sustainable AI systems',
+    ],
+  },
+  {
+    title: 'International Business & Cross-Cultural Dynamics',
+    items: [
+      'Global adoption of AI in innovation strategies',
+      'Cultural intelligence in AI implementation',
+      'Emerging markets and inclusive technology design',
+      'Localization and adaptation of AI-driven solutions',
+    ],
+  },
+  {
+    title: 'Public Policy, Governance & Regulation',
+    items: [
+      'Data governance, sovereignty, and regulation',
+      'National AI strategies and cross-border policy frameworks',
+      'Public-private partnerships for AI and innovation',
+      'AI ethics and legal implications across sectors',
+    ],
   },
 ];
-const ThemeSection = () => {
-  return (
-    <section className="py-12 px-4 sm:px-8 lg:px-20 bg-light-gray">
-      <div className="grid gap-10 md:grid-cols-2">
-        {sections.slice(1).map((section, index) => (
-          <div
-            key={section.title}
-            className="relative bg-white rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-md border-l-4 border-accent-blue hover:scale-105 transition-transform duration-300 cursor-pointer"
-          >
-            <div
-              className={`absolute -top-4 -left-4 sm:-top-6 sm:-left-6 ${
-                index === 0
-                  ? 'w-24 xs:w-24 sm:w-40 md:w-40'
-                  : 'w-32 xs:w-28 sm:w-44 md:w-44'
-              }`}
-            >
-              <img
-                src={section.image}
-                alt=""
-                aria-hidden="true"
-                className="w-full object-contain"
-              />
-            </div>
 
-            <h3 className="text-xl sm:text-2xl font-bold text-start mb-6 pl-4 sm:pl-24 mt-12 leading-tight tracking-tight text-primary-blue">
-              {section.title}
-            </h3>
-            {section.title === 'Key/Major Themes' &&
-            Array.isArray(section.content) ? (
-              <ul className="text-gray-700 leading-relaxed text-left pl-2 text-sm sm:text-base">
-                {section.content.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-2 mb-6">
-                    <span className="font-semibold text-dark-purple min-w-[1.5rem]">
-                      {idx + 1}.
-                    </span>
-                    <span className="block">{item}</span>
-                  </li>
+const ThemeSection = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  return (
+    <section className="bg-light-gray py-16 px-6 sm:px-12 lg:px-32" role="region" aria-label="Conference themes">
+      <div className="max-w-5xl mx-auto text-center mb-10">
+        <h2 className="text-4xl font-extrabold text-primary-blue">Themes & Sub-themes</h2>
+        <p className="text-md sm:text-lg text-gray-700 mt-3 max-w-3xl mx-auto">
+          Explore the strategic and emerging topics shaping innovation in business and society.
+        </p>
+      </div>
+
+      <div className="space-y-4 max-w-5xl mx-auto">
+        {themes.map(({ title, items }, index) => (
+          <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-200 transition-all">
+            <button
+              onClick={() => setOpenIndex(openIndex === index ? null : index)}
+              className="w-full flex justify-between items-center px-5 py-4 text-left font-semibold text-primary-blue text-sm sm:text-base hover:bg-gray-50 focus:outline-none"
+            >
+              {title}
+              <span className="text-gray-500 text-xs">
+                {openIndex === index ? <FaChevronUp /> : <FaChevronDown />}
+              </span>
+            </button>
+            {openIndex === index && (
+              <ul className="px-6 pb-4 list-disc list-inside text-sm text-gray-700 space-y-2">
+                {items.map((item, i) => (
+                  <li key={i}>{item}</li>
                 ))}
               </ul>
-            ) : (
-              <p className="text-gray-700 whitespace-pre-line leading-relaxed text-justify">
-                {section.content}
-              </p>
             )}
           </div>
         ))}
+      </div>
+
+      <div className="mt-16 flex justify-center">
+        <img
+          src={themesImage}
+          alt="Themes illustration"
+          className="w-full max-w-3xl rounded-xl shadow-md object-contain"
+        />
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 
 import { Link } from 'react-scroll';
-import conferenceImage from '../../assets/conferenceHero.jpg';
+import conferenceImage from '../../assets/casaCity.jpeg';
 import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
 const HeroSection = () => {

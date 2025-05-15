@@ -1,11 +1,13 @@
 import HeroSection from './heroSection';
 import AboutSection from './aboutSection';
-import ThemeSection from './themeSection';
 import KeyDateSection from './keyDateSection';
 import SpeakersSection from './speakersSection';
 import JournalsSection from './journalsSection';
 import EventsSection from './eventSection';
 import RegistrationSection from './registartionSection';
+import ThemesAndPublicationsSection from './ThemesAndPublicationsSection';
+import CoorganiserAndCommitteeSection from './CoorganiserAndCommitteeSection';
+import VisaInvitationSection from './visaSection';
 
 const ConferencePage = () => {
   return (
@@ -15,12 +17,13 @@ const ConferencePage = () => {
     >
       <HeroSection />
       <AboutSection />
-      <ThemeSection />
+      <ThemesAndPublicationsSection/>
       <KeyDateSection />
       <SpeakersSection />
+      <CoorganiserAndCommitteeSection/>
+      <VisaInvitationSection/>
       <JournalsSection />
       <EventsSection/>
-    
       <RegistrationSection/>
     </main>
   );

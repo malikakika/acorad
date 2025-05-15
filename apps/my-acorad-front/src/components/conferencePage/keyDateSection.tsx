@@ -29,7 +29,7 @@ const keyDates = [
 const KeyDateSection = () => {
     return(
 <section id="keydates"
-className="py-20 px-4 sm:px-8 lg:px-32 bg-white"
+className="py-2 px-4 sm:px-8 lg:px-32 bg-white"
 >
 <h2 className="text-3xl font-extrabold text-center text-dark-purple mb-12">
   Key Dates

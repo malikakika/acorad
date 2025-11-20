@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaChevronDown } from 'react-icons/fa';
 import themesImage from '../../assets/themes-illustration.png';
 import publicationImage from '../../assets/publication-opportunit.png';
 
@@ -110,8 +109,8 @@ const ThemesAndPublicationsSection = () => {
             <img
               src={themesImage}
               alt="Themes icon"
-              className="absolute top-4 left-4 w-16 sm:w-20 lg:w-24 h-auto "
-            />
+              className="hidden sm:block absolute top-4 left-4 w-16 sm:w-20 lg:w-24 h-auto"
+              />
           </div>
 
           <h2 className="text-3xl font-bold text-primary-blue mb-4 text-center">
@@ -151,8 +150,8 @@ const ThemesAndPublicationsSection = () => {
             <img
               src={publicationImage}
               alt="Publication icon"
-              className="absolute top-4 left-4 w-16 sm:w-20 lg:w-32 h-auto"
-            />
+              className="hidden sm:block absolute top-4 left-4 w-16 sm:w-20 lg:w-24 h-auto"
+              />
           </div>
 
           <h2 className="text-3xl font-bold text-primary-blue mb-4 ml-6 text-center">

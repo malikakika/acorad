@@ -4,6 +4,8 @@ import Guest1 from '../../assets/SabriBOUBAKER.webp';
 import Guest2 from '../../assets/MuhammadUsman.jpeg';
 import Guest3 from '../../assets/OsmanKaratepe.jpg';
 import Guest4 from '../../assets/ChristinaTheodoraki.png';
+import Guest5 from '../../assets/guest5.jpeg';
+
 
 const speakers = [
     {
@@ -26,6 +28,12 @@ const speakers = [
       role: 'Full Professor (HDR) – Entrepreneurship & Strategy\nIAE Aix-Marseille Graduate School of Management\nAix-Marseille University, France',
       image: Guest4,
     },
+     {
+      name: 'Fatima Zahra Alami',
+      role: 'Vice President for Academic and Student Affairs',
+      image: Guest5,
+    },
+    
   ];
   
 const SpeakersSection = () => {

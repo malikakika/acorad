@@ -13,7 +13,7 @@ aria-label="ICDAMI 2025 Conference Hero"
   className="absolute inset-0 bg-center bg-cover"
   style={{
     backgroundImage: `url(${conferenceImage})`,
-    filter: 'brightness(0.5) blur(1px)',
+    filter: 'brightness(0.5) ',
   }}
   aria-hidden="true"
 ></div>
